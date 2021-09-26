@@ -17,7 +17,7 @@ const Posts = () =>
             }}
           />
           <View>  
-            <Text style={styles.name}>Jean Luiz</Text>
+            <Text style={styles.name}>Jean Luiz Dias</Text>
             <Text style={styles.time}>10 hrs</Text>
           </View>
         </View>
