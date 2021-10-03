@@ -1,13 +1,36 @@
-import React from 'react';
-import {View, Text, Image, Pressable} from 'react-native';
-import styles from './styles'
+import React, {useState} from 'react';
+import {View, Text, Image, Linking} from 'react-native';
+import ButtonFooter from '../../components/ButtonFooter';
+import Icon  from 'react-native-vector-icons/AntDesign';
+import Comments from '../../components/Comments';
+
+
+import styles from './styles';
 
 const Posts = () => 
 {
+  const [liked, setLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(1452);
+  const [openComments, setOpenComments] = useState(false);
+
+  const increment = () =>
+  {
+      let counter = likeCount + 1;
+      setLikeCount(counter);
+      setLiked(!liked);
+  };
+
+  const decrement = () =>
+  {
+      let counter = likeCount - 1;
+      setLikeCount(counter);
+      setLiked(!liked);
+  };
+
+
   return(
     <>
   
-
         <View style={styles.header}>
 
           <Image
@@ -18,7 +41,9 @@ const Posts = () =>
           />
           <View>  
             <Text style={styles.name}>Jean Luiz Dias</Text>
-            <Text style={styles.time}>10 hrs</Text>
+            <Text style={styles.time}>
+              <Icon name="clockcircleo" style={styles.iconTime} /> 10hrs
+            </Text>
           </View>
         </View>
 
@@ -36,33 +61,26 @@ const Posts = () =>
         />
 
         <View style={styles.footer}>
-          <Text style={styles.textFooter}>1.452 Likes</Text>
+          <Text style={styles.textFooter}> {likeCount} Likes</Text>
         </View>
 
         <View style={styles.line} />
 
         <View style={styles.buttonRow}>
 
-          <Pressable style={styles.buttonFooter}>
-            <Text style={styles.textFooter}>
-              Like
-            </Text>
-          </Pressable>
+          <ButtonFooter text="Curtir" icon={liked ? "like1" : "like2"} 
+            onPress={liked ? decrement : increment }/>
 
-          <Pressable style={styles.buttonFooter}>
-            <Text style={styles.textFooter}>
-              Comment
-            </Text>
-          </Pressable>
+          <ButtonFooter text="Comment" icon="message1"
+            onPress={() => setOpenComments(true)}
+          />
 
-          <Pressable style={styles.buttonFooter}>
-            <Text style={styles.textFooter}>
-              Share
-            </Text>
-          </Pressable>
-
+          <ButtonFooter text="Share" icon="sharealt" 
+            onPress={() => Linking.openURL('https://pt-br.facebook.com/') }/>
+      
         </View>
 
+        {openComments && <Comments onClose={() => setOpenComments(false)} />}
 
     </>
   );

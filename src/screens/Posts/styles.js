@@ -48,7 +48,7 @@ const styles = StyleSheet.create(
     postImage:
     {
         width:width,
-        height:300
+        height:250
     },
 
     footer:
@@ -85,7 +85,11 @@ const styles = StyleSheet.create(
        height:45,
        justifyContent:'center',
        alignItems:'center',
-    }
+    },
+
+    iconTime: {
+        marginRight: 40,
+      },
 
 
 });
