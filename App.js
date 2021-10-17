@@ -1,8 +1,15 @@
 import React from 'react';
-import Posts from './src/screens/Posts';
+import Routes from './src/routes';
+import {NavigationContainer} from '@react-navigation/native';
+
 
 const App = () => {
-  return <Posts />;
+  return (
+ 
+          <NavigationContainer>
+            <Routes/>
+          </NavigationContainer>
+  );
 };
 
 export default App;
