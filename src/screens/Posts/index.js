@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, Image, Linking} from 'react-native';
+import {View, Text, Image, Linking, ScrollView} from 'react-native';
 import ButtonFooter from '../../components/ButtonFooter';
 import Icon  from 'react-native-vector-icons/AntDesign';
 import Comments from '../../components/Comments';
@@ -30,7 +30,7 @@ const Posts = () =>
 
   return(
     <>
-  
+        <ScrollView>
         <View style={styles.header}>
 
           <Image
@@ -81,6 +81,8 @@ const Posts = () =>
         </View>
 
         {openComments && <Comments onClose={() => setOpenComments(false)} />}
+
+        </ScrollView>
 
     </>
   );

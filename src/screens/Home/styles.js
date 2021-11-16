@@ -8,16 +8,33 @@ const styles = StyleSheet.create(
         width:'100%',
         height: '100%',
         display:'flex',
-        justifyContent: 'center',
-        alignItems:'center',
+        flexDirection: 'column-reverse',
+        justifyContent: 'space-between',
+        alignItems:'center'
      
     },
 
-    textoInicial:
+    deslogar:
     {
         fontWeight:'bold',
         fontSize: 20
+    },
+
+    icon_logout:
+    {
+        width:38
+    },
+
+    espaco_deslogar:
+    {
+        width:'100%',
+        display:'flex',
+        flexDirection:'row',
+        justifyContent:'center',
+        alignItems: 'center'
     }
+
+
 });
 
 
