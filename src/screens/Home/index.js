@@ -11,7 +11,7 @@ const Home = ({navigation}) => {
 
     <View style={styles.centralizar}>
 
-      <LottieView source={require('../../assets/76136-facebook.json')} autoPlay loop/>
+      <LottieView source={require('../../assets/lf20_mfhfqbag.json')} autoPlay/>
 
       <Pressable
             style={styles.espaco_deslogar}
